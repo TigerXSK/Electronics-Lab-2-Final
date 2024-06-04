@@ -1,7 +1,7 @@
-# ? ¹q¤l¹êÅç Final Project Exp_4 ?
+# ğŸº é›»å­å¯¦é©— Final Project Exp_4 ğŸº
 
-## ¥H¤U¬°Tinkercad¹q¸ô¹Ï
+## ä»¥ä¸‹ç‚ºTinkercadé›»è·¯åœ–
 
 ![image](https://github.com/TigerXSK/Electronics-Lab-2-Final/blob/main/Tinkercad%20%E9%9B%BB%E8%B7%AF%E5%9C%96.png)
 
-by ®}¸t³Í 2024/06/04
+by å¾è–å‡± 2024/06/04
