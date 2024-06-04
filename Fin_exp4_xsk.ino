@@ -13,7 +13,7 @@ int Btn = 15;
 
 // Debounce
 int buttonState;
-int lastButtonState = HIGH; // ªì©l¤Æ¬° HIGH
+int lastButtonState = HIGH; // åˆå§‹åŒ–ç‚º HIGH
 unsigned long lastDebounceTime = 0;
 unsigned long debounceDelay = 50000; // 50ms
 
@@ -52,7 +52,7 @@ void loop() {
     if (reading != buttonState) {
       buttonState = reading;
       if (buttonState == HIGH) {
-        Mode = 1 - Mode; // ¤Á´«¼Ò¦¡ (0->1 ©Î 1->0)
+        Mode = 1 - Mode; // åˆ‡æ›æ¨¡å¼ (0->1 æˆ– 1->0)
         Pointer = 0;
       }
     }
@@ -65,13 +65,13 @@ void loop() {
     digitalWrite(Trig, HIGH);
     delayMicroseconds(10);
     digitalWrite(Trig, LOW);
-    distance = (pulseIn(Echo, HIGH) / 29.41) / 2; //Án³t:340 m/s, 34000 cm/s,  29.41 ?s/cm
+    distance = (pulseIn(Echo, HIGH) / 29.41) / 2; //è²é€Ÿ:340 m/s, 34000 cm/s,  29.41 Âµs/cm
     display_str = String(distance) + "Cm ";
   } 
   else if(Mode == 1) {
     // Temperature
-    temp = analogRead(14); // A0 ¸}¦ì 14 (´¡S)
-    temp = (temp / 1023) * 5.0 * 100; //¥ı±N¼Æ¦ì­ÈÂà´«¦^Ãş¤ñ(¹qÀ£)¡A¦A±N¹qÀ£Âà´«¬°Äá¤ó«× ¤ñ¨Ò¡G 0.01 (V/?C)
+    temp = analogRead(14); // A0 è…³ä½ 14 (æ’S)
+    temp = (temp / 1023) * 5.0 * 100; //å…ˆå°‡æ•¸ä½å€¼è½‰æ›å›é¡æ¯”(é›»å£“)ï¼Œå†å°‡é›»å£“è½‰æ›ç‚ºæ”æ°åº¦ æ¯”ä¾‹ï¼š 0.01 (V/ËšC)
     display_str = String(temp, 1) + "oC ";
   }
 
@@ -109,13 +109,13 @@ void display(String str)
   // char chr_l = str[5];
   // char chr_r = str[6];
 
-  // ¥ª
+  // å·¦
   digitalWrite(Com_left, LOW);
   digitalWrite(Com_right, HIGH);
   ShowNum(chr_l);
   delayMicroseconds(5000); // 5ms per character
 
-  // ¥k
+  // å³
   digitalWrite(Com_left, HIGH);
   digitalWrite(Com_right, LOW);
   ShowNum(chr_r);
@@ -130,7 +130,7 @@ void showSevenSeg(byte A, byte B, byte C, byte D, byte E, byte F, byte G, byte P
 
 void ShowNum(char chr) 
 {
-  switch (chr) {   // low ªº®É­Ô¤~·|«G
+  switch (chr) {   // low çš„æ™‚å€™æ‰æœƒäº®
     case '0':
       showSevenSeg(0, 0, 0, 0, 0, 0, 1, 1); // 0
       break;
@@ -174,7 +174,7 @@ void ShowNum(char chr)
       showSevenSeg(1, 1, 1, 1, 1, 1, 1, 0); // .
       break;
     case 'o':
-      showSevenSeg(0, 0, 1, 1, 1, 0, 0, 1); // ?
+      showSevenSeg(0, 0, 1, 1, 1, 0, 0, 1); // Ëš
       break;
     default:
       showSevenSeg(1, 0, 0, 1, 0, 0, 0, 1); // x
